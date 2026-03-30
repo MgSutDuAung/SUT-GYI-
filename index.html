@@ -1,1 +1,165 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>SUT GYI | Digital Service</title>
+    <style>
+        /* အခြေခံ ဒီဇိုင်း */
+        :root {
+            --gold: #f1c40f;
+            --blue: #3498db;
+            --dark: #0f172a;
+            --card-bg: #1e293b;
+        }
+
+        body {
+            margin: 0;
+            padding: 0;
+            background-color: var(--dark);
+            color: white;
+            font-family: sans-serif;
+            text-align: center;
+        }
+
+        /* Header နာမည် */
+        header {
+            padding: 40px 20px;
+            background: linear-gradient(45deg, #1e293b, #0f172a);
+            border-bottom: 3px solid var(--gold);
+        }
+
+        .logo {
+            font-size: 40px;
+            font-weight: bold;
+            color: var(--gold);
+            text-shadow: 0 0 15px rgba(241, 196, 15, 0.5);
+        }
+
+        /* Video Editing ကြော်ငြာ Area */
+        .video-ad {
+            margin: 30px auto;
+            width: 90%;
+            max-width: 700px;
+            padding: 20px;
+            background: #2d3436;
+            border-radius: 15px;
+            border: 2px dashed var(--blue);
+        }
+
+        .video-placeholder {
+            width: 100%;
+            aspect-ratio: 16/9;
+            background: #000;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 10px;
+            margin-bottom: 10px;
+        }
+
+        /* Diamond & UC ဈေးနှုန်းဇယား */
+        .container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            padding: 20px;
+        }
+
+        .card {
+            background: var(--card-bg);
+            width: 300px;
+            margin: 15px;
+            padding: 20px;
+            border-radius: 15px;
+            border: 1px solid #334155;
+            transition: 0.3s;
+        }
+
+        .card:hover {
+            border-color: var(--gold);
+            transform: translateY(-5px);
+        }
+
+        .card h2 {
+            color: var(--gold);
+            margin-bottom: 15px;
+        }
+
+        .price-list {
+            text-align: left;
+            padding: 0;
+            list-style: none;
+        }
+
+        .price-list li {
+            padding: 10px 0;
+            border-bottom: 1px solid #334155;
+            display: flex;
+            justify-content: space-between;
+        }
+
+        .btn-order {
+            width: 100%;
+            padding: 12px;
+            background: var(--gold);
+            color: black;
+            border: none;
+            border-radius: 8px;
+            font-weight: bold;
+            margin-top: 15px;
+            cursor: pointer;
+        }
+
+        footer {
+            padding: 30px;
+            color: #636e72;
+            font-size: 14px;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">SUT GYI</div>
+        <p>Premium Game Top-up & Video Editing Service</p>
+    </header>
+
+    <div class="video-ad">
+        <h3 style="color: var(--blue);">Video Editing Service</h3>
+        <div class="video-placeholder">
+            <p style="color: #444;">[ မင်းရဲ့ Video ကို ဒီမှာပြမယ် ]</p>
+        </div>
+        <p>Tiktok, Gaming Highlights များကို စိတ်ကြိုက် တည်းဖြတ်ပေးပါသည်</p>
+    </div>
+
+    <div class="container">
+        <div class="card">
+            <h2>MLBB Diamond</h2>
+            <ul class="price-list">
+                <li>86 Diamonds <span>5,500 MMK</span></li>
+                <li>172 Diamonds <span>10,800 MMK</span></li>
+                <li>257 Diamonds <span>15,000 MMK</span></li>
+                <li>Weekly Pass <span>5,500 MMK</span></li>
+            </ul>
+            <button class="btn-order">အခုဝယ်မယ်</button>
+        </div>
+
+        <div class="card">
+            <h2>PUBG UC</h2>
+            <ul class="price-list">
+                <li>60 UC <span>3,500 MMK</span></li>
+                <li>325 UC <span>16,000 MMK</span></li>
+                <li>660 UC <span>31,500 MMK</span></li>
+            </ul>
+            <button class="btn-order">အခုဝယ်မယ်</button>
+        </div>
+    </div>
+
+    <footer>
+        <p>SUT DU AUNG &copy; 2026. Fast & Trusted.</p>
+    </footer>
+
+</body>
+</html>
 
