@@ -7,12 +7,12 @@
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/animate.css/4.1.1/animate.min.css"/>
     <style>
         :root {
-            --primary: #f39c12; /* Golden */
-            --secondary: #2ecc71; /* Green */
+            --primary: #f39c12; 
+            --secondary: #2ecc71;
             --bg: #0f172a;
             --card: #1e293b;
             --text: #f8fafc;
-            --messenger: #0078FF;
+            --telegram: #0088cc;
         }
 
         * {
@@ -25,10 +25,10 @@
         body {
             background-color: var(--bg);
             color: var(--text);
-            overflow-x: hidden; /* Side scroll မဖြစ်အောင် */
+            overflow-x: hidden;
         }
 
-        /* Navigation with Animation */
+        /* Nav Animation */
         nav {
             background: rgba(15, 23, 42, 0.95);
             padding: 15px 5%;
@@ -39,7 +39,7 @@
             top: 0;
             z-index: 1000;
             border-bottom: 2px solid var(--primary);
-            animation: slideInDown 1s; /* အပေါ်ကနေ ဆင်းလာမယ့် animation */
+            animation: slideInDown 0.8s;
         }
 
         .logo {
@@ -47,36 +47,21 @@
             font-weight: 800;
             color: var(--primary);
             text-transform: uppercase;
-            text-shadow: 0 0 10px rgba(243, 156, 18, 0.5);
         }
 
-        /* Hero Section (Video Ad Area) with FadeIn Animation */
+        /* Banner */
         .promo-banner {
             padding: 60px 5%;
             text-align: center;
-            background: linear-gradient(rgba(15, 23, 42, 0.8), rgba(15, 23, 42, 0.9)), 
-                        url('https://images.unsplash.com/photo-1580894912989-0bc892f40d3a?q=80&w=1000&auto=format&fit=crop');
+            background: linear-gradient(rgba(15, 23, 42, 0.85), rgba(15, 23, 42, 0.85)), 
+                        url('https://images.unsplash.com/photo-1542751371-adc38448a05e?q=80&w=1000&auto=format&fit=crop');
             background-size: cover;
-            background-position: center;
-            animation: fadeIn 2s;
-        }
-
-        .promo-banner h1 {
-            font-size: 2.5rem;
-            margin-bottom: 15px;
-            color: white;
-        }
-
-        .promo-banner p {
-            color: #cbd5e1;
-            font-size: 1.1rem;
-            max-width: 600px;
-            margin: 0 auto 30px auto;
+            animation: fadeIn 1.5s;
         }
 
         .video-box {
             max-width: 700px;
-            margin: 0 auto;
+            margin: 30px auto;
             background: #000;
             aspect-ratio: 16/9;
             border: 3px solid var(--primary);
@@ -86,72 +71,45 @@
             justify-content: center;
             overflow: hidden;
             box-shadow: 0 10px 30px rgba(0,0,0,0.5);
-            transition: transform 0.3s;
         }
 
-        /* Video Box ကို Mouse တင်ရင် တုန်ခါသွားမယ့် Animation */
-        .video-box:hover {
-            transform: scale(1.02);
-        }
-
-        /* Main Container */
-        .container {
-            padding: 50px 5%;
-        }
-
+        /* Grid & Cards */
+        .container { padding: 40px 5%; }
+        
         .section-title {
-            margin-bottom: 30px;
+            margin-bottom: 25px;
             color: var(--primary);
             border-left: 5px solid var(--primary);
             padding-left: 15px;
-            font-size: 1.8rem;
         }
 
-        /* Product Grid */
         .grid {
             display: grid;
             grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
             gap: 25px;
-            margin-bottom: 60px;
+            margin-bottom: 50px;
         }
 
-        /* Product Cards with Hover Animation */
         .card {
             background: var(--card);
             border-radius: 20px;
             padding: 25px;
             text-align: center;
-            transition: all 0.4s ease;
+            transition: 0.4s;
             border: 1px solid #334155;
-            position: relative;
-            overflow: hidden;
         }
 
-        /* Card ထဲကို Mouse တင်ရင် ပိုလင်းလာပြီး ကြွတက်လာမယ့် Animation */
         .card:hover {
-            transform: translateY(-10px) scale(1.03);
+            transform: translateY(-10px);
             border-color: var(--primary);
-            box-shadow: 0 15px 30px rgba(243, 156, 18, 0.2);
+            box-shadow: 0 10px 25px rgba(243, 156, 18, 0.1);
         }
 
-        .card h3 {
-            margin-bottom: 20px;
-            font-size: 1.5rem;
-            color: white;
-        }
-
-        /* Game Icons */
-        .game-icon {
-            font-size: 3rem;
-            margin-bottom: 15px;
-        }
-
-        /* Price List */
         .price-list {
             list-style: none;
-            margin-bottom: 25px;
+            margin: 20px 0;
             text-align: left;
-            background: rgba(15, 23, 42, 0.6);
+            background: rgba(15, 23, 42, 0.5);
             padding: 15px;
             border-radius: 10px;
         }
@@ -161,75 +119,32 @@
             border-bottom: 1px dashed #334155;
             display: flex;
             justify-content: space-between;
-            align-items: center;
         }
 
-        .price-list li:last-child {
-            border-bottom: none;
-        }
+        .price-tag { color: var(--secondary); font-weight: bold; }
 
-        .price-tag {
-            color: var(--secondary);
-            font-weight: bold;
-            font-size: 1.1rem;
-        }
-
-        /* Order Button with Pulse Animation */
-        .btn-order {
+        /* Telegram Button */
+        .btn-telegram {
             width: 100%;
             padding: 15px;
-            background: var(--primary);
-            color: #000;
+            background: var(--telegram);
+            color: white;
             border: none;
             border-radius: 10px;
             font-weight: bold;
             cursor: pointer;
-            text-transform: uppercase;
-            font-size: 1rem;
-            transition: 0.3s;
+            text-decoration: none;
             display: flex;
             align-items: center;
             justify-content: center;
             gap: 10px;
-            text-decoration: none; /* Link underline ဖြုတ်ရန် */
-        }
-
-        /* ခလုတ်ကို Mouse တင်ရင် အရောင်ပြောင်းမယ့် Animation */
-        .btn-order:hover {
-            background: white;
-            color: var(--primary);
-            transform: scale(1.05);
-        }
-
-        /* Contact Section */
-        .contact-section {
-            background: var(--card);
-            padding: 40px;
-            border-radius: 20px;
-            text-align: center;
-            margin-top: 50px;
-            border: 2px solid #334155;
-            animation: fadeInUp 1.5s; /* အောက်ကနေ တက်လာမယ့် animation */
-        }
-
-        .btn-messenger {
-            display: inline-flex;
-            align-items: center;
-            gap: 10px;
-            padding: 15px 30px;
-            background: var(--messenger);
-            color: white;
-            border-radius: 50px;
-            text-decoration: none;
-            font-weight: bold;
-            font-size: 1.1rem;
-            margin-top: 20px;
             transition: 0.3s;
         }
 
-        .btn-messenger:hover {
-            transform: scale(1.1) rotate(5deg);
-            box-shadow: 0 5px 20px rgba(0, 120, 255, 0.4);
+        .btn-telegram:hover {
+            background: white;
+            color: var(--telegram);
+            transform: scale(1.03);
         }
 
         footer {
@@ -237,14 +152,6 @@
             padding: 40px;
             border-top: 1px solid #334155;
             color: #64748b;
-            margin-top: 50px;
-        }
-
-        /* Mobile Responsive */
-        @media (max-width: 600px) {
-            .promo-banner h1 { font-size: 2rem; }
-            .section-title { font-size: 1.5rem; }
-            .grid { grid-template-columns: 1fr; }
         }
     </style>
 </head>
@@ -252,94 +159,71 @@
 
     <nav>
         <div class="logo">SUT GYI</div>
-        <div style="color: #64748b; font-size: 0.9rem;">Fast & Reliable</div>
+        <div style="font-size: 0.8rem;">24/7 Top-up Service</div>
     </nav>
 
     <section class="promo-banner">
-        <h1 class="animate__animated animate__zoomIn">Professional Video Editing</h1>
-        <p>Tiktok, Gaming Highlights & Vlog တွေကို ဈေးနှုန်းချိုသာစွာဖြင့် တည်းဖြတ်ပေးနေပါပြီ</p>
+        <h1 class="animate__animated animate__bounceInDown">SUT GYI Digital Store</h1>
+        <p>Diamond, UC နှင့် Video Editing ဝန်ဆောင်မှုများကို တစ်နေရာတည်းတွင် ရယူလိုက်ပါ</p>
         
         <div class="video-box">
-            <p style="color: #444;">[ Video Ad Here ]</p>
+            <p style="color: #555;">[ Video Ad Here ]</p>
         </div>
     </section>
 
     <div class="container">
         
-        <h2 class="section-title animate__animated animate__fadeInLeft">MLBB Diamonds</h2>
+        <h2 class="section-title animate__animated animate__fadeInLeft">Mobile Legends Diamonds</h2>
         <div class="grid animate__animated animate__fadeInUp">
-            
             <div class="card">
-                <div class="game-icon">💎</div>
                 <h3>Weekly Diamond Pass</h3>
                 <ul class="price-list">
                     <li>1 Pass <span class="price-tag">5,500 MMK</span></li>
                     <li>2 Pass <span class="price-tag">10,800 MMK</span></li>
                 </ul>
-                <a href="https://m.me/yourpageid" class="btn-order" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Facebook_Messenger_logo_2020.svg" alt="Messenger" width="20">
-                    ဝယ်ယူမည်
+                <a href="https://t.me/pouksa588" class="btn-telegram" target="_blank">
+                    ဝယ်ယူမည် (Telegram)
                 </a>
             </div>
 
             <div class="card">
-                <div class="game-icon">🆔</div>
-                <h3>Direct Top-up (ID)</h3>
+                <h3>Diamonds (ID)</h3>
                 <ul class="price-list">
                     <li>86 Diamonds <span class="price-tag">5,200 MMK</span></li>
                     <li>172 Diamonds <span class="price-tag">10,200 MMK</span></li>
-                    <li>257 Diamonds <span class="price-tag">15,000 MMK</span></li>
                 </ul>
-                <a href="https://m.me/yourpageid" class="btn-order" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Facebook_Messenger_logo_2020.svg" alt="Messenger" width="20">
-                    ဝယ်ယူမည်
+                <a href="https://t.me/pouksa588" class="btn-telegram" target="_blank">
+                    ဝယ်ယူမည် (Telegram)
                 </a>
             </div>
-            
         </div>
 
-        <h2 class="section-title animate__animated animate__fadeInLeft" style="animation-delay: 0.3s;">PUBG Mobile UC</h2>
-        <div class="grid animate__animated animate__fadeInUp" style="animation-delay: 0.3s;">
-            
+        <h2 class="section-title animate__animated animate__fadeInLeft">PUBG & Editing</h2>
+        <div class="grid animate__animated animate__fadeInUp">
             <div class="card">
-                <div class="game-icon">🔫</div>
-                <h3>Global UC (ID)</h3>
+                <h3>PUBG Mobile UC</h3>
                 <ul class="price-list">
                     <li>60 UC <span class="price-tag">3,500 MMK</span></li>
                     <li>325 UC <span class="price-tag">15,500 MMK</span></li>
-                    <li>660 UC <span class="price-tag">31,000 MMK</span></li>
                 </ul>
-                <a href="https://m.me/yourpageid" class="btn-order" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Facebook_Messenger_logo_2020.svg" alt="Messenger" width="20">
-                    ဝယ်ယူမည်
+                <a href="https://t.me/pouksa588" class="btn-telegram" target="_blank">
+                    ဝယ်ယူမည် (Telegram)
                 </a>
             </div>
 
             <div class="card">
-                <div class="game-icon">🎬</div>
-                <h3>Video Editing</h3>
-                <p style="font-size: 0.9rem; color: #cbd5e1; margin-bottom: 15px; text-align: left;">Gaming Highlights & Montage များအတွက် အရည်အသွေးမြင့် တည်းဖြတ်ပေးသည်။</p>
-                <a href="https://m.me/yourpageid" class="btn-order" style="background: #6366f1; color: white;" target="_blank">
-                    <img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Facebook_Messenger_logo_2020.svg" alt="Messenger" width="20">
+                <h3>Video Editing Service</h3>
+                <p style="margin: 20px 0; font-size: 0.9rem; color: #cbd5e1;">Tiktok & Gaming Montage များကို အလန်းဆုံး တည်းဖြတ်ပေးနေပါပြီ</p>
+                <a href="https://t.me/pouksa588" class="btn-telegram" style="background: var(--primary); color: black;" target="_blank">
                     Contact for Editing
                 </a>
             </div>
-            
         </div>
-
-        <section class="contact-section">
-            <h2>Contact Us</h2>
-            <p>မည်သည့်ပြဿနာမဆို ၂၄ နာရီပတ်လုံး ဆက်သွယ်မေးမြန်းနိုင်ပါသည်။</p>
-            <a href="https://m.me/yourpageid" class="btn-messenger" target="_blank">
-                <img src="https://upload.wikimedia.org/wikipedia/commons/b/be/Facebook_Messenger_logo_2020.svg" alt="Messenger" width="25">
-                Chat on Messenger
-            </a>
-        </section>
 
     </div>
 
     <footer>
-        <p>SUT GYI Service &copy; 2026. Designed with ❤️ in Myanmar.</p>
+        <p>SUT GYI Service &copy; 2026. Fast & Trusted Service.</p>
     </footer>
 
 </body>
