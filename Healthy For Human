@@ -1,1 +1,39 @@
+<!DOCTYPE html>
+<html lang="my">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Health & Food Guide</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+
+    <header>
+        <nav>
+            <button onclick="changeLang('my')">မြန်မာ</button>
+            <button onclick="changeLang('en')">English</button>
+        </nav>
+        <h1 id="title">ကျန်းမာရေးနှင့် အာဟာရ လမ်းညွှန်</h1>
+    </header>
+
+    <main>
+        <section class="bmi-section">
+            <h2 id="bmi-head">BMI တွက်ချက်စစ်ဆေးရန်</h2>
+            <div class="input-group">
+                <input type="number" id="weight" placeholder="အလေးချိန် (kg)">
+                <input type="number" id="height" placeholder="အရပ် (cm)">
+                <button onclick="calculateBMI()">တွက်မည်</button>
+            </div>
+            <div id="bmi-result"></div>
+        </section>
+
+        <section id="food-guide" class="hidden">
+            <h2 id="guide-head">သင့်အတွက် အကြံပြုထားသော အစားအစာများ</h2>
+            <div id="food-list" class="food-grid"></div>
+        </section>
+    </main>
+
+    <script src="script.js"></script>
+</body>
+</html>
 
